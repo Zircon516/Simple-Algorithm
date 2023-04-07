@@ -55,6 +55,9 @@ class LinkedList:
             return temp_even, temp_even.next
 
 #course solution
+# This method uses two pointers, slow and fast, and advances them at different speeds through the list. 
+# The slow pointer moves one step at a time, while the fast pointer moves two steps at a time. 
+# By the time the fast pointer reaches the end of the list, the slow pointer will be at the middle node.
     def find_middle_node_sol(self): # 让两个pointer速度不一致，一个是另一个速度的两倍，当快的走完全程，慢的恰好走完1/2
         '''find a middle node'''
         # Initialize two pointers to the head of the list
