@@ -15,7 +15,8 @@ class LinkedList:
         while temp is not None:
             print(temp.value)
             temp = temp.next
-
+    
+    # O(1)
     def append(self,value): # create new node and add it to the end
         new_node = Node(value)
         if self.head is None: # if empty linked list, let the new node initialize
@@ -26,7 +27,8 @@ class LinkedList:
             self.tail = new_node
         self.length += 1 
         return True # this funcation will be call again, so we need a return
-
+    
+    # O(n)
     def pop(self):
         if self.head is None: # situation 1: an empty linkedlist
             return None
@@ -46,7 +48,7 @@ class LinkedList:
             self.tail = None
         return temp # return the temp we just remove
 
-
+    # O(1)
     def prepend(self,value): # create new node and add it to the beginning
         new_node = Node(value)
         if self.length == 0:
@@ -58,10 +60,11 @@ class LinkedList:
         self.length +=1
         return True
     
+    # O(1)
     def popFirst(self): # pop the first item in the linkedlist
         if self.length == 0:
             return None
-        temp = self.head # create this because we need a return op poped
+        temp = self.head # create this because we need a return of poped
         self.head = self.head.next
         temp.next = None
         self.length -= 1
@@ -69,6 +72,7 @@ class LinkedList:
             self.tail = None
         return temp
     
+    # O(n)
     def get(self, index): # return the node that in specific index
         if index < 0 or index >= self.length:
             return None
@@ -77,6 +81,7 @@ class LinkedList:
             temp = temp.next
         return temp.value
     
+    # O(n)
     def set_value(self, index, value): # set a value in specific position of node
         if index < 0 or index >= self.length:
             return None
@@ -92,6 +97,7 @@ class LinkedList:
             return True
         return False # if get a none, return false
     
+    # O(n)
     def insert(self, index, value): # insert a node in specific position
         if index < 0 or index >= self.length:
             return False
@@ -119,7 +125,8 @@ class LinkedList:
         temp.next = new_node
         self.length += 1
         return True
-
+    
+    # O(n)
     def remove(self, index): # remove particular node in position
         if index < 0 or index >= self.length: # for out of range
             return None # return None instead of False, because 
@@ -136,6 +143,7 @@ class LinkedList:
         self.length -= 1
         return temp
     
+    # O(n)
     def reverse(self): # switch tail and head, and all element back force
         # swhicth head and tail
         temp = self.head
